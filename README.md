@@ -9,5 +9,5 @@ can add dependencies as module and import them
 
 `npx tsc`
 
-`node dist/main.js`
+`node dist/blah.js`
 
