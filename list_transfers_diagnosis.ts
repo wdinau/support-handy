@@ -42,7 +42,7 @@ const user7 = "0xcd29d4c97aff99d69cbb2e8d5fa189a103e5ade4"; //130 transfers. -- 
 async function run() {
   await fetchTransfers(''); // fetch all transfers for receiver 0x7156097c501247ee273bd3283dec088d8c982725
   cursor = ''; // reset cursor
-  await fetchTransfers(user) // filter transfers for the specific user we're testing (returns the true 150 results)
+  await fetchTransfers(user3) // filter transfers for the specific user we're testing (returns the true 150 results)
   diff() // run the diff, shows the filtered 150 dont show in the parent set
 }
 
