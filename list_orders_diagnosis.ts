@@ -29,7 +29,7 @@ async function fetchOrders() {
     let orders: Order[] = [];
     let counter: number = 0;
     while (true) {
-      let url = `https://api.x.immutable.com/v3/orders?status=active&sell_token_type=ERC721&page_size=75&min_timestamp=2023-05-04T01:33:58.193924Z&page_size=${pageSize}${cursor ? "&cursor=" + cursor : ""}`;
+      let url = `https://api.x.immutable.com/v3/orders?status=active&sell_token_type=ERC721&order_by=updated_at&page_size=75&min_timestamp=2023-05-04T01:33:58.193924Z&page_size=${pageSize}${cursor ? "&cursor=" + cursor : ""}`;
       const response = await axios.get<Response>(url);
       orders.push(...response.data.result);
       cursor = response.data.cursor;

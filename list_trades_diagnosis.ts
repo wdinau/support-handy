@@ -28,7 +28,7 @@ interface Response {
 }
 
 let cursor = "";
-const pageSize = 80; // Just change this page size to observe Console output
+const pageSize = 100; // Just change this page size to observe Console output
 
 async function run() {
   await fetchTrades();
@@ -41,7 +41,7 @@ async function fetchTrades() {
     let trades: Trade[] = [];
     let counter: number = 0;
     while (true) {
-      let url = `https://api.x.immutable.com/v3/trades?max_timestamp=2023-08-20T17:00:00Z&min_timestamp=2022-08-20T05:00:00Z&direction=asc&order_by=updated_at&page_size=${pageSize}${cursor ? "&cursor=" + cursor : ""}`;
+      let url = `https://api.x.immutable.com/v3/trades?max_timestamp=2023-05-03T17:00:00Z&min_timestamp=2023-05-03T15:00:00Z&order_by=updated_at&page_size=${pageSize}${cursor ? "&cursor=" + cursor : ""}`;
       const response = await axios.get<Response>(url);
       trades.push(...response.data.result);
       cursor = response.data.cursor;
